@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>SU COVID-19 DB</title>
+  <meta name="description" content="">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="stylescontact.css">
+
+</head>
+
+<body>
+	<div class="topnav">
+	  <a href="homepage.html">Home</a>
+	  <a href="#news">Insert</a>
+	  <a href="#contact">Search</a>
+	  <a class="active" href="contact.html">Contact</a>
+	</div>
+<div class="container">
+  <form action="submit_contact.php">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">First Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="Your first name">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Last Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="lastname" placeholder="Your last name">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="email">Email</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="email" name="email" placeholder="Your email address">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="country">Status</label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="country">
+        <option value="usa">Student</option>
+        <option value="australia">Faculty</option>
+        <option value="canada">Staff</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Question / Concern</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="subject" placeholder="Write your comment or concern..." style="height:200px"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>
+</body>
+</html>

@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
@@ -86,7 +91,7 @@ input[type=submit]:hover {
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #A80000;
-  color: white;
+  color: #FFCC44;
 }
 
 /* Add a color to the active/current link */

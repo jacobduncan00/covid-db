@@ -75,6 +75,8 @@ body {
 	padding: 8px;
 }
 
+/* Make every even child of the staff id to be grey */
+/* Makes table look more readable */
 #staff tr:nth-child(even){
 	background-color: #f2f2f2;
 }

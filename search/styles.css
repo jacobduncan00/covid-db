@@ -63,3 +63,50 @@ body {
 	height: 600px;
 	width: 600px;
 }
+
+.header {
+	font-size: 40px;
+	font-weight: bold;
+	color: #A80000;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+}
+
+.form-group input {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  text-decoration: none;
+  outline: none;
+}
+
+#result{
+	font-family: 'Roboto', sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#result td, #result th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#result tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#result tr:hover {
+	background-color: #ddd;
+}
+
+#result th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #A80000;
+	color: #FFCC44;
+}

@@ -23,7 +23,7 @@ echo '<head>
 	</div>
 </body>';
 
- $connection=@mysqli_connect('localhost', 'jciurca1', 'jciurca1', 'CovidDB');
+ $connection=@mysqli_connect('localhost', 'jduncan5', 'jduncan5', 'CovidDB');
  $query="SELECT Staff.ID, birthdate, name, email FROM Staff, University_personnel WHERE Staff.ID = University_personnel.ID;";
  $r = mysqli_query($connection, $query);
 

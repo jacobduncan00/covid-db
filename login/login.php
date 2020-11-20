@@ -1,6 +1,6 @@
 <?php  
 
- require('db_connect.php');
+require('db_connect.php');
 
 // Checks to see if values are set
 // This means if the value is declared and is different than NULL
@@ -20,7 +20,7 @@ if (isset($_POST['user_id']) and isset($_POST['user_pass'])){
 	 header("Location: ../admin/admin.php");
 	 exit;
 	}else{ // Else we didn't get anything back and therefore info was not in DB
-	 echo "<script type='text/javascript'>alert('Invalid Login Credentials'); window.location.href='./login.html';</script>";
+	 echo "<script type='text/javascript'>alert('Invalid Login Credentials'); window.location.href='login.html';</script>";
 	}
 }
 ?>

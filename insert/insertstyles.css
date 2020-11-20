@@ -169,7 +169,7 @@ body {
   font-size: 12px;
 }
 
-form input[type=submit] {
+.login-box button {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -187,7 +187,7 @@ form input[type=submit] {
   transform: translate(-50%, -50%);
 }
 
-form input[type=submit]:hover {
+button:hover {
   background: #FFCC44;
   color: #fff;
   border-radius: 5px;
@@ -197,7 +197,3 @@ form input[type=submit]:hover {
               0 0 100px ;#FFCC44;
 }
 
-input[type=submit] span {
-  position: absolute;
-  display: block;
-}

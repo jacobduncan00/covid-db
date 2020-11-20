@@ -1,10 +1,8 @@
-/* Add a black background color to the top navigation */
 .topnav {
   background-color: #FFCC44;
   overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   color: #A80000;
@@ -15,13 +13,11 @@
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
   background-color: #A80000;
   color: #FFCC44;
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
   background-color: #A80000;
   color: white;
@@ -55,6 +51,7 @@ body {
 	border: none;
 	font-size: 16px;
 	box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+	background-color: #FFCC44;
 }
 
 .box::before {
@@ -70,7 +67,7 @@ body {
 .box select option {
 	padding: 20px;
 }
-}
+
 .h1center, .h3center {
 	text-align: center;
 }
@@ -113,7 +110,7 @@ body {
 
 .login-box {
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
   width: 400px;
   padding: 40px;
@@ -147,6 +144,7 @@ body {
   outline: none;
   background: transparent;
 }
+
 .login-box .user-box label {
   position: absolute;
   top:0;
@@ -157,6 +155,11 @@ body {
   pointer-events: none;
   transition: .5s;
 }
+
+/* Adds tiny titles of each field for the form */
+/* You need to include the ~ as the styling for the input is dependent on the location of the label tag */
+/* General Sibling Combinator - It will select all elements that is preceded by the former selector */
+/* So, select all labels that are preceded by the input field */
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
@@ -198,80 +201,3 @@ input[type=submit] span {
   position: absolute;
   display: block;
 }
-
-input[type=submit] span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-
-  background: linear-gradient(90deg, transparent, #FFCC44);
-  animation: btn-anim1 1s linear infinite;
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,100% {
-    left: 100%;
-  }
-}
-
-input[type=submit] span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #FFCC44);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,100% {
-    top: 100%;
-  }
-}
-
-input[type=submit] span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #FFCC44);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,100% {
-    right: 100%;
-  }
-}
-
-input[type=submit] span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #FFCC44);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
-}
-
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,100% {
-    bottom: 100%;
-  }
-}
-

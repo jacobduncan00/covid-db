@@ -12,7 +12,7 @@ echo '<head>
 <body style="font-family: sans-serif;">
 	<div class="topnav">
 	  <a href="../homepage/homepage.html">Home</a>
-	  <a href="insert.html">Insert</a>
+	  <a href="../insert/insert.html">Insert</a>
 	  <a href="../search/search.html">Search</a>
 	  <a href="../about/about.html">About</a>
 	  <div style="float:right;" class="topnav-right">

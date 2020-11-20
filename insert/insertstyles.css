@@ -47,6 +47,30 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.box select {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding: 12px;
+	border: none;
+	font-size: 16px;
+	box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.box::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20%;
+	height: 100%;
+	text-align: center;
+	pointer-events: none;
+}
+
+.box select option {
+	padding: 20px;
+}
+}
 .h1center, .h3center {
 	text-align: center;
 }
@@ -101,7 +125,8 @@ body {
 }
 
 .login-box h2 {
-  margin: 0 0 30px;
+  margin: 0 20px 30px;
+  margin-bottom: 50px;
   padding: 0;
   color: #FFCC44;
   text-align: center;
@@ -154,7 +179,9 @@ form input[type=submit] {
   transition: .5s;
   margin-top: 40px;
   border: 2px solid white;
-  letter-spacing: 4px
+  letter-spacing: 4px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 form input[type=submit]:hover {

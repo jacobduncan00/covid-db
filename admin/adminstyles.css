@@ -1,6 +1,5 @@
 .topnav {
-  /*background-color: #FFCC44;*/
-  background-color: rgba(0,0,0,0);
+  background-color: #FFCC44;
   overflow: hidden;
 }
 
@@ -31,8 +30,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #bf033b;
-  background-image: linear-gradient(315deg, #bf033b 0%, #ffc719 74%);
+  background-color: white;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
 }
@@ -64,4 +62,31 @@ body {
 .himg {
 	height: 600px;
 	width: 600px;
+}
+
+#staff {
+	font-family: 'Roboto', sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#staff td, #staff th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#staff tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#staff tr:hover {
+	background-color: #ddd;
+}
+
+#staff th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #A80000;
+	color: #FFCC44;
 }

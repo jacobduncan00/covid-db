@@ -4,14 +4,17 @@
 <head>
   <meta charset="utf-8">
 
-  <title>SU COVID-19 DB</title>
+  <title>COVID-19 DB | Insert</title>
   <meta name="description" content="">
   <meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="insertstyles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="app.js"></script>
 </head>
 
 <body style="font-family: 'Roboto', sans-serif;">
+	<div id="particles-js">
 	<div class="topnav">
 	  <a href="../homepage/homepage.html">Home</a>
 	  <a class="active" href="insert.html">Insert</a>
@@ -21,6 +24,65 @@
 	    <a href="../login/login.html">Login</a>
 	    <a href="../contact/contact.html">Contact</a>
 	  </div>
+	</div>
+	<div class="login-box">
+	  <h2>Log Test Information</h2>
+	  <form id="login-form" method="post" action="insert.php">
+	   <div class="box">
+	      <select onchange="s()" id="ptype"  class="ptype" name="personnel-type">
+		<option value="student">Student</option>
+		<option value="faculty">Faculty</option>
+		<option value="staff">Staff</option>
+	      </select>
+	   </div>
+	    <div class="user-box">
+	      <input type="text" name="user_id" id="user_id">
+	      <label>University ID</label>
+	    </div>
+	    <div class="user-box">
+	      <input type="text" name="user_id" id="user_id">
+	      <label>First Name</label>
+	    </div>
+	    <div class="user-box">
+	      <input type="password" name="user_pass" id="user_id">
+	      <label>Last Name</label>
+	    </div>
+	    <div class="user-box">
+	      <input type="password" name="user_pass" id="user_id">
+	      <label>Email Address</label>
+	    </div> 
+	    <div class="user-box">
+	      <input type="birthdate" name="user_pass" id="user_id">
+	      <label>Birthdate</label>
+	    </div> 
+	    <div class="user-box student-show">
+	      <input type="student" name="user_pass" id="grade">
+	      <label>Grade</label>
+	    </div>
+	    <div class="user-box staff-show">
+	      <input type="staff" name="user_pass" id="supervisor">
+	      <label>Supervisor</label>
+	    </div>
+	    <div class="user-box staff-show">
+	      <input type="staff" name="user_pass" id="building">
+	      <label>Building of Work</label>
+	    </div>
+	    <div class="user-box faculty-show">
+	      <input type="faculty" name="user_pass" id="office-building">
+	      <label>Office Building</label>
+	    </div>
+	    <div class="user-box faculty-show">
+	      <input type="faculty" name="user_pass" id="num-classes-teaching">
+	      <label># of classes currently teaching</label>
+	    </div>
+	    <input class="sbutton" type="submit" value="Submit">
+	      <span></span>
+	      <span></span>
+	      <span></span>
+	      <span></span>
+	    </input>
+	  </form>
+	</div>
 	</div>
 </body>
 </html>

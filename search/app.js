@@ -19,7 +19,7 @@ $(document).ready(() => {
   {
    load_data(search);
   } else {
-   load_data();
+   load_data("");
   } 
  });
 });

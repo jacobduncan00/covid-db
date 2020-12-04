@@ -4,7 +4,7 @@ $(document).ready(() => {
 	 $(".staff-show").hide();	
 });
 
-/* Function that when called hides and shows certain elements in the DOM based off the result of the select teg */
+/* Function that when called hides and shows certain elements in the DOM based off the result of the select tag */
 function show() {
 	$(document).ready(() => {
 	let x = $("select")[0].value;
@@ -24,7 +24,6 @@ function show() {
 	});
 }
 
-
 function getUniversalData() {
 	let id = document.getElementById('uni_id');
 	let fname = document.getElementById('first_name');
@@ -39,26 +38,41 @@ function getUniversalData() {
 function resetForm() {
 	let form = document.getElementById('login-form');
 	form.reset();
-	return;
 }
 
 function sendToInsertPHP(info, x){
-		let form = document.getElementById('login-form');
-		console.log(form.serialize());
+		let data = {};
+		switch(x) {
+			case "student":
+				data = {id: info[0], name: info[1], email: info[2], birthdate: info[3], grade: info[4]};
+				break;
+			case "faculty":
+				data = {id: info[0], name: info[1], email: info[2], birthdate: info[3], officeBuilding: info[4], numOfClasses: info[5]};
+				break;
+			case "staff": 
+				data = {id: info[0], name: info[1], email: info[2], birthdate: info[3], buildingOfWork: info[4], supervisor: info[5]};
+				break;
+
+		}
+	console.log(info, x, data);
 		$.ajax({
 			url: "insert.php",
 			method: "POST",
-			data: form.serialize(),
-			success:function(data){
+			dataType: "json",
+			data: data,
+			success:function(msg){
 				alert(`${x}'s information was successfully added to the database!`);
 				resetForm();
+				console.log(msg.returnMessage);
 			}
 		});
 }
+
 /* Not functional right now, still in development */
 /* There is a much easier way of doing this but just needed to test to see if a POST would work in the first place */
 
 function submit() {
+	console.log("clicked");
 	$(document).ready(() => {
 	let x = $("select")[0].value;
 		if (x == "student") {
@@ -78,6 +92,7 @@ function submit() {
 			sendToInsertPHP(info, x);
 			return;
 		} else if (x == "staff") {
+			let info = getUniversalData();
 			let supervisor = document.getElementById('supervisor');
 			let buildingOfWork = document.getElementById('office_building');
 			info.push(supervisor);

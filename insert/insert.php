@@ -1,84 +1,61 @@
-<!doctype html>
-<html lang='en'>
-<head>
-  <meta charset='utf-8'>
+<?php
+	$connection = mysqli_connect('localhost', 'jduncan5', 'jduncan5', 'CovidDB');
+	if (!$connection) {
+		die('Connection failed: ' . mysqli_connect_error());
+	}
+	//$id= (int)$_POST['id'];
+	//$name= $_POST['name'];
+	//$email= $_POST['email'];
+	//$dob= $_POST['birthdate'];
+	//$grade;
+	//$officeBuilding;
+	//$numOfClasses;
+	//$supervisor;
+	//$buildingOfWork;
 
-  <title>COVID-19 DB | Insert</title>
-  <meta name='description' content=''>
-  <meta name='author' content='SitePoint'>
+	//if (isset($_POST['grade'])) {
+		//$grade = $_POST['grade'];
+	//}
+	//if (isset($_POST['officeBuilding'])) {
+		//$officeBuilding = $_POST['officeBuilding'];
+	//}
+	//if (isset($_POST['numOfClasses'])) {
+		//$numOfClasses= $_POST['numOfClasses'];
+	//}
+	//if (isset($_POST['supervisor'])) {
+		//$supervisor = $_POST['supervisor'];
+	//}
+	//if (isset($_POST['buildingOfWork'])) {
+		//$buildingOfWork = $_POST['buildingOfWork'];
+	//}
 
-  <link rel='stylesheet' href='insertstyles.css'>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-  <script src='app.js'></script>
-</head>
-
-<body style='font-family: "Roboto", sans-serif;'>
-	<div class='topnav'>
-	  <a href='../homepage/homepage.html'>Home</a>
-	  <a class='active' href='insert.html'>Insert</a>
-	  <a href='../search/search.html'>Search</a>
-	  <a href='../about/about.html'>About</a>
-	  <div style='float:right;' class='topnav-right'>
-	    <a href='../login/login.html'>Login</a>
-	    <a href='../contact/contact.html'>Contact</a>
-	  </div>
-	</div>
-	<div class='login-box'>
-	  <h2>Log Test Information</h2>
-	  <form id='login-form' method='post'>
-	   <div class='box'>
-	      <select onchange='show()' id='ptype'  class='ptype' name='personnel-type'>
-		<option value='student'>Student</option>
-		<option value='faculty'>Faculty</option>
-		<option value='staff'>Staff</option>
-	      </select>
-	   </div>
-	    <div class='user-box'>
-	      <input type='text' name='id' id='uni_id'>
-	      <label>University ID</label>
-	    </div>
-	    <div class='user-box'>
-	      <input type='text' name='fname' id='first_name'>
-	      <label>First Name</label>
-	    </div>
-	    <div class='user-box'>
-	      <input type='text' name='lname' id='last_name'>
-	      <label>Last Name</label>
-	    </div>
-	    <div class='user-box'>
-	      <input type='text' name='email' id='email_addr'>
-	      <label>Email Address</label>
-	    </div> 
-	    <div class='user-box'>
-	      <input type='date' name='birthdate' id='birth_date'>
-	      <label>Birthdate</label>
-	    </div> 
-	    <div class='user-box student-show'>
-	      <input type='year' name='grade' id='grade'>
-	      <label>Grade</label>
-	    </div>
-	    <div class='user-box staff-show'>
-	      <input type='text' name='supervisor' id='supervisor'>
-	      <label>Supervisor</label>
-	    </div>
-	    <div class='user-box staff-show'>
-	      <input type='text' name='building' id='building'>
-	      <label>Building of Work</label>
-	    </div>
-	    <div class='user-box faculty-show'>
-	      <input type='text' name='office_building' id='office_building'>
-	      <label>Office Building</label>
-	    </div>
-	    <div class='user-box faculty-show'>
-	      <input type='number' name='classes' id='num_classes_teaching'>
-	      <label># of classes currently teaching</label>
-	    </div>
-	  </form>
-	    <button onclick='submit()' class='sbutton' type='submit' value='Submit'>
-	    Submit
-	    </button>
-	</div>
-</body>
-</html>
+	//echo json_encode(array("returnMessage" => "success")); 
+	//$name= mysqli_real_escape_string($connection, $name);
+	//$email= mysqli_real_escape_string($connection, $email);
+	//$birthdate= mysqli_real_escape_string($connection, $birthdate);
+	//$data = "'$id', '$birthdate', '$name', '$email'";
+	//$studentDATA = "'$id', '$grade'";
 
 
+//	$sql = "INSERT INTO University_personnel(ID, birthdate, name, email) VALUES (3064372, '2000-06-13', 'Tim Tebow', 'ttebow1@yahoo.com')";
+$num = (int)1;
+$sql2 = "INSERT INTO Student(ID, year) VALUES()";
+
+	if (mysqli_query($connection, sprintf("INSERT INTO Student(ID, year) VALUES (%d, %d)", $num, $num))) {
+		echo json_encode(array("returnMessage" => "success")); 
+	} else {
+		echo json_encode(array("returnMessage" => "failure")); 
+	}
+
+	//echo json_encode(array("returnMessage" => "ID: " . $id .
+		//"Name: " . $name . 
+		//"Email: " . $email . 
+		//"DOB: " . $dob .
+		//"Grade: " . $grade .
+		//"Office Building: " . $officeBuilding .
+		//"Num Classes: " . $numOfClasses . 
+		//"Supervisor: " . $supervisor . 
+		//"Building Of Work: " . $buildingOfWork
+	//)); 
+	mysqli_close($connection);
+?>

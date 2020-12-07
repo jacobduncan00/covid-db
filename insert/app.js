@@ -44,13 +44,13 @@ function sendToInsertPHP(info, x){
 		let data = {};
 		switch(x) {
 			case "student":
-				data = {id: info[0], name: info[1], email: info[2], birthdate: info[3], grade: info[4]};
+				data = {type: "student", id: info[0], name: info[1], email: info[2], birthdate: info[3], grade: info[4]};
 				break;
 			case "faculty":
-				data = {id: info[0], name: info[1], email: info[2], birthdate: info[3], officeBuilding: info[4], numOfClasses: info[5]};
+				data = {type: "faculty", id: info[0], name: info[1], email: info[2], birthdate: info[3], officeBuilding: info[4], numOfClasses: info[5]};
 				break;
 			case "staff": 
-				data = {id: info[0], name: info[1], email: info[2], birthdate: info[3], buildingOfWork: info[4], supervisor: info[5]};
+				data = {type: "staff", id: info[0], name: info[1], email: info[2], birthdate: info[3], supervisor: info[4], buildingOfWork: info[5]};
 				break;
 
 		}
@@ -63,7 +63,9 @@ function sendToInsertPHP(info, x){
 			success:function(msg){
 				alert(`${x}'s information was successfully added to the database!`);
 				resetForm();
-				console.log(msg.univ);
+				console.log(msg.student);
+				console.log(msg.faculty);
+				console.log(msg.staff);
 			}
 		});
 }
@@ -95,8 +97,8 @@ function submit() {
 			let info = getUniversalData();
 			let supervisor = document.getElementById('supervisor');
 			let buildingOfWork = document.getElementById('office_building');
-			info.push(supervisor);
-			info.push(buildingOfWork);
+			info.push(supervisor.value);
+			info.push(buildingOfWork.value);
 			JSON.stringify(info);
 			sendToInsertPHP(info, x);
 			return;

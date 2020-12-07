@@ -3,6 +3,7 @@
 	if (!$connection) {
 		die('Connection failed: ' . mysqli_connect_error());
 	}
+	$type= $_POST['type'];
 	$id= (int)$_POST['id'];
 	$name= $_POST['name'];
 	$email= $_POST['email'];
@@ -29,21 +30,52 @@
 		$buildingOfWork = $_POST['buildingOfWork'];
 	}
 
-	$query = "INSERT INTO University_personnel(ID, birthdate, name, email) VALUES (%d, '%s', '%s', '%s')";
-	$query2 = "INSERT INTO Student(ID, year) VALUES (%d, %d)";
-	if((mysqli_query($connection, sprintf($query, $id, $dob, $name, $email)) === TRUE) && (mysqli_query($connection, sprintf($query2, $id, $grade)) == TRUE)) {
-		echo json_encode(array("univ" => "[UNIV_PERSON] posted to DB")); 
-	} else {
-		echo json_encode(array("univ" => sprintf($query, $id, $dob, $name, $email))); 
+ 	// ******************************
+	// STUDENT QUERY TO INSERT INTO DB
+ 	// ******************************
+	if ($type == student) {	
+		$query = "INSERT INTO University_personnel(ID, birthdate, name, email) VALUES (%d, '%s', '%s', '%s')";
+		$query2 = "INSERT INTO Student(ID, year) VALUES (%d, %d)";
+		if((mysqli_query($connection, sprintf($query, $id, $dob, $name, $email)) === TRUE)
+			&&
+			(mysqli_query($connection, sprintf($query2, $id, $grade)) == TRUE)) {
+			echo json_encode(array("student" => "[UNIV_PERSON | STUDENT] posted to DB")); 
+		} else {
+			echo json_encode(array("student" => sprintf($query, $id, $dob, $name, $email))); 
+		}
 	}
 
 
-	//if (mysqli_query($connection, sprintf($query2, $id, $grade)) === TRUE) {
-		//echo json_encode(array("student" => "[STUDENT] posted to DB")); 
-	//} else {
-		//echo json_encode(array("student" => sprintf($query2, $id, $grade))); 
-	//}
-
+	 // ******************************
+       	// FACULTY QUERY TO INSERT INTO DB
+	 // ******************************
+	elseif ($type == faculty) {	
+		 $query = "INSERT INTO University_personnel(ID, birthdate, name, email) VALUES (%d, '%s', '%s', '%s')";
+		$facQuery = "INSERT INTO Faculty(ID, Office, Number_classes) VALUES (%d, '%s', %d)";
+		if((mysqli_query($connection, sprintf($query, $id, $dob, $name, $email)) === TRUE)
+			&&
+			(mysqli_query($connection, sprintf($facQuery, $id, $officeBuilding, $numOfClasses)) == TRUE)) {
+			echo json_encode(array("faculty" => "[UNIV_PERSON | FACULTY] posted to DB")); 
+		} else {
+			echo json_encode(array("faculty" => sprintf($query, $id, $dob, $name, $email, $officeBuilding, $numOfClasses))); 
+		}
+	}
+	
+ 	// ******************************
+	// STAFF QUERY TO INSERT INTO DB
+ 	// ******************************
+	
+	elseif ($type == staff) {
+		 $query = "INSERT INTO University_personnel(ID, birthdate, name, email) VALUES (%d, '%s', '%s', '%s')";
+		 $staffQuery = "INSERT INTO Staff(ID, Supervisor, Building) VALUES (%d, '%s', '%s')";
+		if((mysqli_query($connection, sprintf($query, $id, $dob, $name, $email)) === TRUE)
+			&&
+			(mysqli_query($connection, sprintf($staffQuery, $id, $supervisor, $buildingOfWork)) == TRUE)) {
+			echo json_encode(array("staff" => "[UNIV_PERSON | STAFF] posted to DB")); 
+		} else {
+			echo json_encode(array("staff" => sprintf($query, $id, $dob, $name, $email, $supervisor, $buildingOfWork))); 
+		}
+	}
 
 	mysqli_close($connection);
 ?>

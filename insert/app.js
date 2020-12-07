@@ -63,7 +63,7 @@ function sendToInsertPHP(info, x){
 			success:function(msg){
 				alert(`${x}'s information was successfully added to the database!`);
 				resetForm();
-				console.log(msg.returnMessage);
+				console.log(msg.univ);
 			}
 		});
 }

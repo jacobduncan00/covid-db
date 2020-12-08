@@ -11,6 +11,9 @@ session_start();
   <meta name="description" content="">
   <meta name="author" content="SitePoint">
 
+<link rel="icon"
+      type="image/png"
+      href="../assets/favicon.ico">
   <link rel="stylesheet" href="contactstyles.css">
 </head>
 

@@ -14,6 +14,10 @@ session_start();
 
   <link rel="stylesheet" href="insertstyles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link rel="icon"
+      type="image/png"
+      href="../assets/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@500&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

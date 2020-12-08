@@ -1,6 +1,6 @@
 # Salisbury University COVID-19 Database Interface - COSC 386 Semester Project
 
-## Features
+# Features
 
 ### Insert
 - Select the type of University personnel you are, based off your selection from the dropdown menu, the fields will change on the form. Fill out the form with the required information. Click the submit button and the information will be stored in our SU COVID-19 Database hosted on the Acadweb server using MySQL.
@@ -17,14 +17,14 @@
 ### About
 - A general synopsis of the project and the technology that goes into it as well as information about current COVID-19 news.
 
-## Admin Logins
+# Admin Logins
 - Username: jduncan5
 - Password: password
 
 - Username: jing
 - Password: admin
 
-## Progress Report
+# Progress Report
 
 ### 11/10
 - Created the routes

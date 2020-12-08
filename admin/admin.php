@@ -27,11 +27,11 @@ if(isset($_SESSION['userid'])) {
 	  <a href="../homepage/homepage.php">Home</a>
 	  <a href="../insert/insertpage.php">Insert</a>
 	  <a href="../search/search.php">Search</a>
-	  <a href="../about/about.html">About</a>
+	  <a href="../about/about.php">About</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a class="active" href="../admin/admin.php">Admin</a>
 	    <a href="../logout/logout.php">Logout</a>
-	    <a href="../contact/contact.html">Contact</a>
+	    <a href="../contact/contact.php">Contact</a>
 	  </div>
 	</div>
 <?php	} else { ?>
@@ -39,11 +39,11 @@ if(isset($_SESSION['userid'])) {
 	  <a href="../homepage/homepage.php">Home</a>
 	  <a href="../insert/insertpage.php">Insert</a>
 	  <a href="../search/search.php">Search</a>
-	  <a href="../about/about.html">About</a>
+	  <a href="../about/about.php">About</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a class="active" href="../admin/admin.php">Admin</a>
 	    <a href="../login/login.html">Login</a>
-	    <a href="../contact/contact.html">Contact</a>
+	    <a href="../contact/contact.php">Contact</a>
 	  </div>
 	</div>
 <?php	} ?>

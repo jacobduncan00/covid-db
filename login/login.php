@@ -1,5 +1,5 @@
 <?php  
-
+session_start();
 require('db_connect.php');
 
 // Checks to see if values are set
@@ -17,6 +17,7 @@ if (isset($_POST['user_id']) and isset($_POST['user_pass'])){
 	$count = mysqli_num_rows($result);
 
 	if ($count == 1){ // Means we got a tuple back, meaning our info was in the DB
+	 $_SESSION['userid'] = $username;
 	 header("Location: ../admin/admin.php");
 	 exit;
 	}else{ // Else we didn't get anything back and therefore info was not in DB

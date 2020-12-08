@@ -1,6 +1,8 @@
 .topnav {
   background-color: #FFCC44;
   overflow: hidden;
+  height: 48px;
+  text-decoration: none;
 }
 
 .topnav a {
@@ -8,7 +10,7 @@
   color: #A80000;
   font-weight: bold;
   text-align: center;
-  padding: 14px 16px;
+  padding: 12px 16px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -16,31 +18,25 @@
 .topnav a:hover {
   background-color: #A80000;
   color: #FFCC44;
+  text-decoration: none;
 }
 
 .topnav a.active {
   background-color: #A80000;
   color: white;
+  text-decoration: none;
 }
 
 .topnav-right {
-	float: right;
-}
-
-.create-acc a {
-  color: #FFCC44;
-  text-decoration: underline;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-.create-acc a:hover {
-	color: white;
+  float: right;
+  text-decoration: none;
 }
 
 body {
-  background-color: white;
-  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif, 'arial';
 }
 
 .box select {
@@ -52,6 +48,10 @@ body {
 	font-size: 16px;
 	box-shadow: 0 5px 25px rgba(0,0,0,0.2);
 	background-color: #FFCC44;
+}
+
+.box select:focus {
+	outline: 0;
 }
 
 .box::before {
@@ -194,3 +194,30 @@ button:hover {
               0 0 100px ;#FFCC44;
 }
 
+.column {
+	flex: 50%;
+}
+
+.row {
+	display: flex;
+}
+
+.insert {
+	margin: 50px auto;
+	display: grid;
+	width: 75%;
+}
+
+.boxContainer {
+  height: 200px;
+  position: relative;
+}
+
+.box1 {
+  margin: 0;
+  margin-top: 20px;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

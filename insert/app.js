@@ -30,8 +30,10 @@ function getUniversalData() {
 	let lname = document.getElementById('last_name');
 	let email = document.getElementById('email_addr');
 	let birthdate = document.getElementById('birth_date');
+	let resultDate = document.getElementById('test_date');
+	let result = document.getElementById('test_result');
 	let fullName = `${fname.value} ${lname.value}`;
-	let info = [id.value, fullName, email.value, birthdate.value];
+	let info = [id.value, fullName, email.value, birthdate.value, resultDate.value, result.value];
 	return info;
 }
 
@@ -44,13 +46,13 @@ function sendToInsertPHP(info, x){
 		let data = {};
 		switch(x) {
 			case "student":
-				data = {type: "student", id: info[0], name: info[1], email: info[2], birthdate: info[3], grade: info[4]};
+				data = {type: "student", id: info[0], name: info[1], email: info[2], birthdate: info[3], resultDate: info[4], result: info[5], grade: info[6]};
 				break;
 			case "faculty":
-				data = {type: "faculty", id: info[0], name: info[1], email: info[2], birthdate: info[3], officeBuilding: info[4], numOfClasses: info[5]};
+				data = {type: "faculty", id: info[0], name: info[1], email: info[2], birthdate: info[3], resultDate: info[4], result: info[5], officeBuilding: info[6], numOfClasses: info[7]};
 				break;
 			case "staff": 
-				data = {type: "staff", id: info[0], name: info[1], email: info[2], birthdate: info[3], supervisor: info[4], buildingOfWork: info[5]};
+				data = {type: "staff", id: info[0], name: info[1], email: info[2], birthdate: info[3], resultDate: info[4], result: info[5], supervisor: info[6], buildingOfWork: info[7]};
 				break;
 
 		}
@@ -96,7 +98,7 @@ function submit() {
 		} else if (x == "staff") {
 			let info = getUniversalData();
 			let supervisor = document.getElementById('supervisor');
-			let buildingOfWork = document.getElementById('office_building');
+			let buildingOfWork = document.getElementById('building');
 			info.push(supervisor.value);
 			info.push(buildingOfWork.value);
 			JSON.stringify(info);

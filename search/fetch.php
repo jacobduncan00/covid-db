@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $connect = mysqli_connect("localhost", "jduncan5", "jduncan5", "CovidDB");
 
 $output = '';
@@ -35,6 +35,10 @@ while($row=mysqli_fetch_array($result)) {
 		<br></br>
 		<p><span style="font-weight: bold;">Status</span>: ' . $res . '</td>
 		<p><span style="font-weight: bold;">Test Date</span>: ' . $testDate["month"] . '/' . $testDate["day"] . '/' . $testDate["year"] . '</td>
+		<br></br>
+		<div style="text-align: center;">
+		<button style="font-weight: bold; background-color: orange; border: 2px solid black; border-radius: 5px; padding: 5px; margin-bottom: 10px; width: 20%;">Edit</button>
+		</div>
 		</div>
 		</div>
 		';
@@ -53,6 +57,10 @@ while($row=mysqli_fetch_array($result)) {
 		<br></br>
 		<p><span style="font-weight: bold;">Status</span>: ' . $res . '</td>
 		<p><span style="font-weight: bold;">Test Date</span>: ' . $testDate["month"] . '/' . $testDate["day"] . '/' . $testDate["year"] . '</td>
+		<br></br>
+		<div style="text-align: center;">
+		<button style="font-weight: bold; background-color: orange; border: 2px solid black; border-radius: 5px; padding: 5px; margin-bottom: 10px; width: 20%;">Edit</button>
+		</div>
 		</div>
 		</div>
 		';

@@ -1,5 +1,10 @@
 <?php
-echo '<head>
+session_start();
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
   <meta charset="utf-8">
 
   <title>SU COVID-19 DB</title>
@@ -10,19 +15,39 @@ echo '<head>
 </head>
 
 <body style="font-family: sans-serif;">
+
+
+<?php
+if(isset($_SESSION['userid'])) {
+?>
 	<div class="topnav">
-	  <a href="../homepage/homepage.html">Home</a>
-	  <a href="../insert/insert.html">Insert</a>
-	  <a href="../search/search.html">Search</a>
+	  <a href="../homepage/homepage.php">Home</a>
+	  <a href="../insert/insertpage.php">Insert</a>
+	  <a href="../search/search.php">Search</a>
 	  <a href="../about/about.html">About</a>
 	  <div style="float:right;" class="topnav-right">
-	    <a class="active" href="admin.html">Admin</a>
-	    <a href="../homepage/homepage.html">Logout</a>
+	    <a class="active" href="../admin/admin.php">Admin</a>
+	    <a href="../logout/logout.php">Logout</a>
 	    <a href="../contact/contact.html">Contact</a>
 	  </div>
 	</div>
-</body>';
+<?php	} else { ?>
+	<div class="topnav">
+	  <a href="../homepage/homepage.php">Home</a>
+	  <a href="../insert/insertpage.php">Insert</a>
+	  <a href="../search/search.php">Search</a>
+	  <a href="../about/about.html">About</a>
+	  <div style="float:right;" class="topnav-right">
+	    <a class="active" href="../admin/admin.php">Admin</a>
+	    <a href="../login/login.html">Login</a>
+	    <a href="../contact/contact.html">Contact</a>
+	  </div>
+	</div>
+<?php	} ?>
+</body>
+</html>
 
+<?php
  $connection=@mysqli_connect('localhost', 'jduncan5', 'jduncan5', 'CovidDB');
  $query="SELECT Staff.ID, birthdate, name, email FROM Staff, University_personnel WHERE Staff.ID = University_personnel.ID;";
  $r = mysqli_query($connection, $query);
@@ -121,6 +146,29 @@ while($row=mysqli_fetch_array($r)) {
         echo "<tr>";
         echo "<td>" . $row['Test_date'] . "</td>";
         echo "<td>" . $row['Test_time'] . "</td>";
+        echo "</tr>";
+}
+echo "</table>";
+
+
+
+// COVID_test 
+ $query="SELECT Status, Result_date from Result;";
+ $r = mysqli_query($connection, $query);
+
+ echo "<h1 style='text-align: center;'>Results</h1>";
+ echo "<table style='margin-top:2px' id='staff' border='1'>
+        <thead>
+        <tr>
+                <th> Status </th>
+                <th> Result Date </th>
+        </tr>
+        </thead>";
+
+while($row=mysqli_fetch_array($r)) {
+        echo "<tr>";
+        echo "<td>" . $row['Status'] . "</td>";
+        echo "<td>" . $row['Result_date'] . "</td>";
         echo "</tr>";
 }
 echo "</table>";

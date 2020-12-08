@@ -9,6 +9,8 @@
 	$email= $_POST['email'];
 	$dob= $_POST['birthdate'];
 	$grade= $_POST['grade'];
+	$resultDate = $_POST['resultDate'];
+	$result = $_POST['result'];
 	$officeBuilding;
 	$numOfClasses;
 	$supervisor;
@@ -36,12 +38,15 @@
 	if ($type == student) {	
 		$query = "INSERT INTO University_personnel(ID, birthdate, name, email) VALUES (%d, '%s', '%s', '%s')";
 		$query2 = "INSERT INTO Student(ID, year) VALUES (%d, %d)";
+		$query3 = "INSERT INTO Result(Status, Result_date, ID) VALUES ('%s', '%s', %d)";
 		if((mysqli_query($connection, sprintf($query, $id, $dob, $name, $email)) === TRUE)
 			&&
-			(mysqli_query($connection, sprintf($query2, $id, $grade)) == TRUE)) {
+			(mysqli_query($connection, sprintf($query2, $id, $grade)) == TRUE)
+				&&
+					(mysqli_query($connection, sprintf($query3, $result, $resultDate, $id)) == TRUE)) {
 			echo json_encode(array("student" => "[UNIV_PERSON | STUDENT] posted to DB")); 
 		} else {
-			echo json_encode(array("student" => sprintf($query, $id, $dob, $name, $email))); 
+			echo json_encode(array("student" => sprintf($query3, $result, $resultDate, $id))); 
 		}
 	}
 
@@ -50,11 +55,14 @@
        	// FACULTY QUERY TO INSERT INTO DB
 	 // ******************************
 	elseif ($type == faculty) {	
-		 $query = "INSERT INTO University_personnel(ID, birthdate, name, email) VALUES (%d, '%s', '%s', '%s')";
+		$query = "INSERT INTO University_personnel(ID, birthdate, name, email) VALUES (%d, '%s', '%s', '%s')";
 		$facQuery = "INSERT INTO Faculty(ID, Office, Number_classes) VALUES (%d, '%s', %d)";
+		$query3 = "INSERT INTO Result(Status, Result_date, ID) VALUES ('%s', '%s', %d)";
 		if((mysqli_query($connection, sprintf($query, $id, $dob, $name, $email)) === TRUE)
 			&&
-			(mysqli_query($connection, sprintf($facQuery, $id, $officeBuilding, $numOfClasses)) == TRUE)) {
+			(mysqli_query($connection, sprintf($facQuery, $id, $officeBuilding, $numOfClasses)) == TRUE)
+				&&
+					(mysqli_query($connection, sprintf($query3, $result, $resultDate, $id)) == TRUE)) {
 			echo json_encode(array("faculty" => "[UNIV_PERSON | FACULTY] posted to DB")); 
 		} else {
 			echo json_encode(array("faculty" => sprintf($query, $id, $dob, $name, $email, $officeBuilding, $numOfClasses))); 
@@ -68,9 +76,12 @@
 	elseif ($type == staff) {
 		 $query = "INSERT INTO University_personnel(ID, birthdate, name, email) VALUES (%d, '%s', '%s', '%s')";
 		 $staffQuery = "INSERT INTO Staff(ID, Supervisor, Building) VALUES (%d, '%s', '%s')";
+		 $query3 = "INSERT INTO Result(Status, Result_date, ID) VALUES ('%s', '%s', %d)";
 		if((mysqli_query($connection, sprintf($query, $id, $dob, $name, $email)) === TRUE)
 			&&
-			(mysqli_query($connection, sprintf($staffQuery, $id, $supervisor, $buildingOfWork)) == TRUE)) {
+			(mysqli_query($connection, sprintf($staffQuery, $id, $supervisor, $buildingOfWork)) == TRUE)
+				&& 
+					(mysqli_query($connection, sprintf($query3, $result, $resultDate, $id)) == TRUE)) {
 			echo json_encode(array("staff" => "[UNIV_PERSON | STAFF] posted to DB")); 
 		} else {
 			echo json_encode(array("staff" => sprintf($query, $id, $dob, $name, $email, $supervisor, $buildingOfWork))); 

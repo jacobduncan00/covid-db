@@ -50,9 +50,15 @@ if(isset($_SESSION['userid'])) {
 <?php	} ?>
 
 <div class="insert">
-	<h1 style="text-weight: bold; font-family: 'Poppins'; font-size: 4rem; color: #A80000; text-align: center; margin-bottom: 50px;">Log COVID-19 Test Information</h1>
+	<h1 style="font-weight: bold; font-family: 'Poppins'; font-size: 6rem; color: #A80000; text-align: center; margin-bottom: 40px;">Log COVID-19 Test Information</h1>
 <form id="login-form">
-
+	<div style="text-align: center">
+	<ol style="display: inline-block; text-align: left; list-style-position: inside; font-family: 'Poppins'; font-size: 2rem; margin-bottom: 40px;">
+		<li><span style="font-weight: bold; font-size: 3rem;">Select</span> from drop down menu</li>
+		<li><span style="font-weight: bold; font-size: 3rem;">Fill</span> in the form below</li>
+		<li><span style="font-weight: bold; font-size: 3rem;">Click</span> the submit button</li>
+	</ol>
+	</div>
 	<div class="box">
 	      <select onchange="show()" id="ptype" name="type" class="ptype" name="personnel-type">
 		<option value="student">Student</option>

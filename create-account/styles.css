@@ -1,0 +1,250 @@
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #FFCC44;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #A80000;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #A80000;
+  color: #FFCC44;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #A80000;
+  color: white;
+}
+
+.topnav-right {
+	float: right;
+}
+
+.create-acc a {
+  color: #FFCC44;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.create-acc a:hover {
+	color: white;
+}
+
+body {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.h1center, .h3center {
+	text-align: center;
+}
+
+.h1center {
+	color: #A80000;
+	font-size: 4rem;
+	margin-bottom: 5px;
+}
+
+.h3center {
+	margin-top: 0px;
+	color: #A80000;
+	font-size: 2rem;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  width: 50%;
+}
+
+.himg {
+	height: 600px;
+	width: 600px;
+}
+
+
+html {
+  height: 100%;
+}
+
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background-color: #A80000;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #FFCC44;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #FFCC44;
+  font-size: 12px;
+}
+
+form input[type=submit] {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #A80000;
+  color: #FFCC44;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  border: 2px solid white;
+  letter-spacing: 4px
+}
+
+form input[type=submit]:hover {
+  background: #FFCC44;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #FFCC44,
+              0 0 25px #FFCC44,
+              0 0 50px #FFCC44,
+              0 0 100px ;#FFCC44;
+}
+
+input[type=submit] span {
+  position: absolute;
+  display: block;
+}
+
+input[type=submit] span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(90deg, transparent, #FFCC44);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+input[type=submit] span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #FFCC44);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+input[type=submit] span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #FFCC44);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+input[type=submit] span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #FFCC44);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+

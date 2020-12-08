@@ -2,6 +2,12 @@
 	session_start();
 ?>
 
+<style type="text/css">
+input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+</style>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -45,8 +51,8 @@ if(isset($_SESSION['userid'])) {
 <?php	} ?>
 	<div class="form-group">
 	    <div class="input-group">
-	     <h1 class="header" style="margin-bottom: 25px;">Search</h1>
-	     <input style="width: 20%; margin-top: 10px; border: 2px solid black; border-radius: 5px; padding: 10px;" type="text" name="search_text" class="center" id="search_text" placeholder="Enter personnel name" class="form-control" />
+	     <h1 class="header" style="font-weight: 600; font-size: 60px; margin-bottom: 25px;">Search</h1>
+	     <input style="width: 15%; margin-top: 10px; border: 2px solid #A80000; border-radius: 5px; padding: 10px;" type="text" name="search_text" class="center" id="search_text" placeholder="Enter personnel name" class="form-control" />
 	    </div>
 	   </div>
 	   <br />

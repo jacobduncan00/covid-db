@@ -46,6 +46,6 @@ if(isset($_SESSION['userid'])) {
 <?php	} ?>
 	<h1 class="h1center">Salisbury University</h1>
 	<h3 class="h3center">COVID-19 Database</h3>
-	<img class="himg center" src="../assets/covid19.png" alt="covid pic"/>
+	<img class="himg center" style="margin-top: 100px;" src="../assets/covid19.png" alt="covid pic"/>
 </body>
 </html>

@@ -46,3 +46,7 @@ body {
 	/*Centers the input tag and the h1 tag*/
 	text-align: center;
 }
+
+button: hover{
+	cursor: pointer;
+}

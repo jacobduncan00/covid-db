@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>SU COVID-19 DB | SEARCH</title>
+  <title>SU COVID-19 DB | ABOUT</title>
   <meta name="description" content="">
   <meta name="author" content="SitePoint">
 

@@ -49,7 +49,7 @@ if (isset($_POST["query"]) && $type == Name) {
 } 
 else if (isset($_POST["query"]) && $type == ID) {
 
- $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID AND University_personnel.ID = $search";
+ $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID AND University_personnel.ID LIKE '%{$search}%'";
 
 } elseif (isset($_POST["query"]) && $type == Email) {
 
@@ -61,7 +61,7 @@ else if (isset($_POST["query"]) && $type == ID) {
 
 } elseif (isset($_POST["query"]) && $type == TestDate) {
 	
- $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID AND MONTH(Result_date) = $search";
+ $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID AND MONTH(Result_date) LIKE '%{$search}%'";
 
 } else {
 

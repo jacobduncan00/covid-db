@@ -110,7 +110,7 @@ if(isset($_SESSION['userid'])) {
 	  <a href="../homepage/homepage.php">Home</a>
 	  <a href="../insert/insertpage.php">Insert</a>
 	  <a class="active" href="../search/search.php">Search</a>
-	  <a href="../about/about.php">About</a>
+	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a href="../admin/admin.php">Admin</a>
 	    <a href="../logout/logout.php">Logout</a>
@@ -122,7 +122,7 @@ if(isset($_SESSION['userid'])) {
 	  <a href="../homepage/homepage.php">Home</a>
 	  <a href="../insert/insertpage.php">Insert</a>
 	  <a class="active" href="../search/search.php">Search</a>
-	  <a href="../about/about.php">About</a>
+	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a href="../login/login.html">Login</a>
 	    <a href="../contact/contact.php">Contact</a>

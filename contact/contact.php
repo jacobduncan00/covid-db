@@ -25,6 +25,7 @@ if(isset($_SESSION['userid'])) {
 	  <a href="../homepage/homepage.php">Home</a>
 	  <a href="../insert/insertpage.php">Insert</a>
 	  <a href="../search/search.php">Search</a>
+          <a href="../stats/stats.php">Stats</a>
 	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a href="../admin/admin.php">Admin</a>
@@ -37,6 +38,7 @@ if(isset($_SESSION['userid'])) {
 	  <a href="../homepage/homepage.php">Home</a>
 	  <a href="../insert/insertpage.php">Insert</a>
 	  <a href="../search/search.php">Search</a>
+          <a href="../stats/stats.php">Stats</a>
 	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a href="../login/login.html">Login</a>

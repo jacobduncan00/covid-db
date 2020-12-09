@@ -33,6 +33,7 @@ if(isset($_SESSION['userid'])) {
 	  <a href="../homepage/homepage.php">Home</a>
 	  <a class="active" href="../insert/insertpage.php">Insert</a>
 	  <a href="../search/search.php">Search</a>
+          <a href="../stats/stats.php">Stats</a>
 	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a href="../admin/admin.php">Admin</a>
@@ -45,6 +46,7 @@ if(isset($_SESSION['userid'])) {
 	  <a href="../homepage/homepage.php">Home</a>
 	  <a class="active" href="../insert/insertpage.php">Insert</a>
 	  <a href="../search/search.php">Search</a>
+          <a href="../stats/stats.php">Stats</a>
 	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a href="../login/login.html">Login</a>
@@ -76,34 +78,34 @@ if(isset($_SESSION['userid'])) {
     <!--FIRST LINE-->
     <div class="form-group col-md-3">
       <label for="first_name">First Name</label>
-      <input type="first_name" class="form-control" id="first_name" placeholder="John">
+      <input required type="first_name" class="form-control" id="first_name" placeholder="John">
     </div>
     <div class="form-group col-md-3">
       <label for="last_name">Last Name</label>
-      <input type="last_name" class="form-control" id="last_name" placeholder="Appleseed">
+      <input required type="last_name" class="form-control" id="last_name" placeholder="Appleseed">
     </div>
     <div class="form-group col-md-3">
       <label for="birthdate">Birthdate</label>
-      <input type="date" class="form-control" id="birth_date" placeholder="01/01/2000">
+      <input required type="date" class="form-control" id="birth_date" placeholder="01/01/2000">
     </div>
     <div class="form-group col-md-3">
       <label for="ID">University ID</label>
-      <input type="id" class="form-control" id="uni_id" placeholder="1234567">
+      <input required type="id" class="form-control" id="uni_id" placeholder="1234567">
     </div>
   </div>
   <!--SECOND LINE-->
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="email">Email</label>
-      <input type="email" class="form-control" id="email_addr" placeholder="jappleseed1@gulls.salisbury.edu">
+      <input required type="email" class="form-control" id="email_addr" placeholder="jappleseed1@gulls.salisbury.edu">
     </div>
     <div class="form-group col-md-3">
       <label for="COVID-19 Test Date">COVID-19 Test Result Date</label>
-      <input type="date" class="form-control" id="test_date" placeholder="01/01/2020">
+      <input required type="date" class="form-control" id="test_date" placeholder="01/01/2020">
     </div>
     <div class="form-group col-md-3">
       <label for="COVID_result">COVID-19 Test Result</label>
-      <input type="text" class="form-control" id="test_result" placeholder="Negative">
+      <input required type="text" class="form-control" id="test_result" placeholder="Negative">
     </div>
     <div class="form-group col-md-3 student-show">
       <label for="year">Year</label>

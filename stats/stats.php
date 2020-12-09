@@ -1,5 +1,5 @@
 <?php
-session_start();
+	session_start();
 ?>
 
 <!doctype html>
@@ -7,28 +7,28 @@ session_start();
 <head>
   <meta charset="utf-8">
 
-  <title>SU COVID-19 DB</title>
+  <title>SU COVID-19 DB | STATS</title>
   <meta name="description" content="">
   <meta name="author" content="SitePoint">
 
 <link rel="icon"
       type="image/png"
       href="../assets/favicon.ico">
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="app.js"></script>
 </head>
 
-<body style="font-family: 'Poppins', sans-serif;">
-
-
+<body style="font-family: 'Roboto', sans-serif;">
 
 <?php
 if(isset($_SESSION['userid'])) {
 ?>
 	<div class="topnav">
-	  <a class="active" href="../homepage/homepage.php">Home</a>
+	  <a href="../homepage/homepage.php">Home</a>
 	  <a href="../insert/insertpage.php">Insert</a>
 	  <a href="../search/search.php">Search</a>
-          <a href="../stats/stats.php">Stats</a>
+	  <a class="active" href="../stats/stats.php">Stats</a>
 	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a href="../admin/admin.php">Admin</a>
@@ -38,10 +38,10 @@ if(isset($_SESSION['userid'])) {
 	</div>
 <?php	} else { ?>
 	<div class="topnav">
-	  <a class="active" href="../homepage/homepage.html">Home</a>
+	  <a href="../homepage/homepage.php">Home</a>
 	  <a href="../insert/insertpage.php">Insert</a>
 	  <a href="../search/search.php">Search</a>
-          <a href="../stats/stats.php">Stats</a>
+	  <a class="active" href="../stats/stats.php">Stats</a>
 	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
 	    <a href="../login/login.html">Login</a>
@@ -49,8 +49,7 @@ if(isset($_SESSION['userid'])) {
 	  </div>
 	</div>
 <?php	} ?>
-	<h1 class="h1center">Salisbury University</h1>
-	<h3 class="h3center">COVID-19 Database</h3>
-	<img class="himg center" style="margin-top: 100px;" src="../assets/covid19.png" alt="covid pic"/>
+
+<div id="result"></div>
 </body>
 </html>

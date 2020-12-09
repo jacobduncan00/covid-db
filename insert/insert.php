@@ -46,7 +46,7 @@
 					(mysqli_query($connection, sprintf($query3, $result, $resultDate, $id)) == TRUE)) {
 			echo json_encode(array("student" => "[UNIV_PERSON | STUDENT] posted to DB")); 
 		} else {
-			echo json_encode(array("student" => sprintf($query3, $result, $resultDate, $id))); 
+			echo json_encode(array("student" => "Error in form, couldn't add entry to database")); 
 		}
 	}
 
@@ -65,7 +65,7 @@
 					(mysqli_query($connection, sprintf($query3, $result, $resultDate, $id)) == TRUE)) {
 			echo json_encode(array("faculty" => "[UNIV_PERSON | FACULTY] posted to DB")); 
 		} else {
-			echo json_encode(array("faculty" => sprintf($query, $id, $dob, $name, $email, $officeBuilding, $numOfClasses))); 
+			echo json_encode(array("faculty" => "Error in form, couldn't add entry to database")); 
 		}
 	}
 	
@@ -84,7 +84,7 @@
 					(mysqli_query($connection, sprintf($query3, $result, $resultDate, $id)) == TRUE)) {
 			echo json_encode(array("staff" => "[UNIV_PERSON | STAFF] posted to DB")); 
 		} else {
-			echo json_encode(array("staff" => sprintf($query, $id, $dob, $name, $email, $supervisor, $buildingOfWork))); 
+			echo json_encode(array("staff" => "Error in form, couldn't add entry to database")); 
 		}
 	}
 

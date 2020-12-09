@@ -17,6 +17,9 @@
 ### About
 - A general synopsis of the project and the technology that goes into it as well as information about current COVID-19 news.
 
+### Update
+- Incremental search for an ID in the database, if ID found, render the form for the user to fill out with the updated information.
+
 # Admin Logins
 - Username: jduncan5
 - Password: password

@@ -47,29 +47,55 @@ function sendToInsertPHP(info, x){
 		switch(x) {
 			case "student":
 				data = {type: "student", id: info[0], name: info[1], email: info[2], birthdate: info[3], resultDate: info[4], result: info[5], grade: info[6]};
+				$.ajax({
+					url: "insert.php",
+					method: "POST",
+					dataType: "json",
+					data: data,
+					success:function(msg){
+						alert(`${msg.student}`);
+						resetForm();
+						console.log(msg.student);
+						console.log(msg.faculty);
+						console.log(msg.staff);
+					}
+				});
 				break;
 			case "faculty":
 				data = {type: "faculty", id: info[0], name: info[1], email: info[2], birthdate: info[3], resultDate: info[4], result: info[5], officeBuilding: info[6], numOfClasses: info[7]};
-				break;
-			case "staff": 
-				data = {type: "staff", id: info[0], name: info[1], email: info[2], birthdate: info[3], resultDate: info[4], result: info[5], supervisor: info[6], buildingOfWork: info[7]};
-				break;
-
-		}
-	console.log(info, x, data);
 		$.ajax({
 			url: "insert.php",
 			method: "POST",
 			dataType: "json",
 			data: data,
 			success:function(msg){
-				alert(`${x}'s information was successfully added to the database!`);
+				alert(`${msg.faculty}`);
 				resetForm();
 				console.log(msg.student);
 				console.log(msg.faculty);
 				console.log(msg.staff);
 			}
 		});
+				break;
+			case "staff": 
+				data = {type: "staff", id: info[0], name: info[1], email: info[2], birthdate: info[3], resultDate: info[4], result: info[5], supervisor: info[6], buildingOfWork: info[7]};
+		$.ajax({
+			url: "insert.php",
+			method: "POST",
+			dataType: "json",
+			data: data,
+			success:function(msg){
+				alert(`${msg.staff}`);
+				resetForm();
+				console.log(msg.student);
+				console.log(msg.faculty);
+				console.log(msg.staff);
+			}
+		});
+				break;
+
+		}
+	console.log(info, x, data);
 }
 
 /* Not functional right now, still in development */

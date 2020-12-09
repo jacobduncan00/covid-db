@@ -1,6 +1,7 @@
 .topnav {
   background-color: #FFCC44;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .topnav a {
@@ -16,15 +17,18 @@
 .topnav a:hover {
   background-color: #A80000;
   color: #FFCC44;
+  text-decoration: none;
 }
 
 .topnav a.active {
   background-color: #A80000;
   color: white;
+  text-decoration: none;
 }
 
 .topnav-right {
   float: right;
+  text-decoration: none;
 }
 
 body {
@@ -91,4 +95,39 @@ body {
 	text-align: left;
 	background-color: #A80000;
 	color: #FFCC44;
+}
+
+
+.box select {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding: 12px;
+	border: none;
+	font-size: 16px;
+	box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+	background-color: #FFCC44;
+}
+
+.box select:focus {
+	outline: 0;
+}
+
+.box::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20%;
+	height: 100%;
+	text-align: center;
+	pointer-events: none;
+}
+
+.box select option {
+	padding: 20px;
+}
+
+button {
+	margin: auto;
+	text-align: center;
 }

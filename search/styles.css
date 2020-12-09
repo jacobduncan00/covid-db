@@ -50,3 +50,32 @@ body {
 button: hover{
 	cursor: pointer;
 }
+
+.box select {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding: 12px;
+	border: none;
+	font-size: 16px;
+	box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+	background-color: #FFCC44;
+}
+
+.box select:focus {
+	outline: 0;
+}
+
+.box::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20%;
+	height: 100%;
+	text-align: center;
+	pointer-events: none;
+}
+
+.box select option {
+	padding: 20px;
+}

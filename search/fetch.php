@@ -38,11 +38,35 @@ $connect = mysqli_connect("localhost", "jduncan5", "jduncan5", "CovidDB");
 
 $output = '';
 
-if (isset($_POST["query"])) {
- $search = mysqli_real_escape_string($connect, $_POST["query"]);
+$type = $_POST["type"];
+
+$search = mysqli_real_escape_string($connect, $_POST["query"]);
+
+if (isset($_POST["query"]) && $type == Name) {
+
  $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID AND name LIKE '%".$search."%'";
+
+} 
+else if (isset($_POST["query"]) && $type == ID) {
+
+ $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID AND University_personnel.ID = $search";
+
+} elseif (isset($_POST["query"]) && $type == Email) {
+
+ $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID AND email LIKE '%" . $search . "%'";
+
+} elseif (isset($_POST["query"]) && $type == Status) {
+
+ $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID AND Status LIKE '%" . $search . "%'";
+
+} elseif (isset($_POST["query"]) && $type == TestDate) {
+	
+ $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID AND MONTH(Result_date) = $search";
+
 } else {
+
  $query = "SELECT Status, Result_date, Result.ID, University_personnel.ID, name, email, birthdate FROM Result, University_personnel WHERE University_personnel.ID = Result.ID";
+
 }
 
 $result = mysqli_query($connect, $query);

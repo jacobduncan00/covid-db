@@ -5,6 +5,40 @@
 
 <style type="text/css">
 
+.box select {
+	display: block;
+	margin: 0 auto;
+	padding: 12px;
+	border: none;
+	font-size: 16px;
+	box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+	background-color: #FFCC44;
+}
+
+.box select:focus {
+	outline: 0;
+}
+
+.box::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20%;
+	height: 100%;
+	text-align: center;
+	pointer-events: none;
+}
+
+.box select option {
+	padding: 20px;
+}
+
+
+#ptype {
+margin-bottom: 0px;
+}
+
+
 input:focus, textarea:focus, select:focus{
         outline: none;
 }
@@ -99,6 +133,16 @@ if(isset($_SESSION['userid'])) {
 		<div class="form-group">
 		    <div class="input-group" style="margin-left: 300px;">
 		     <h1 class="header" style="font-weight: 600; font-size: 60px; margin-bottom: 25px;">Search</h1>
+		     <div class="box">
+			<select onchange="filter()" id="ptype" name="type" class="ptype" name="filter-type">
+			       <option disabled selected> -- select an option -- </option>
+				<option value="Name">Name</option>
+				<option value="ID">ID</option>
+				<option value="Email">Email</option>
+				<option value="Status">COVID-Status</option>
+				<option value="TestDate">Test Date</option>
+			</select>
+		     </div>
 		     <input style="width: 20%; margin-top: 10px; border: 2px solid #A80000; border-radius: 5px; padding: 10px;" type="text" name="search_text" class="center" id="search_text" placeholder="Enter personnel name" class="form-control" />
 		    </div>
 		</div>

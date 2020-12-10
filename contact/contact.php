@@ -14,7 +14,7 @@ session_start();
 <link rel="icon"
       type="image/png"
       href="../assets/favicon.ico">
-  <link rel="stylesheet" href="contactstyles.css">
+  <link rel="stylesheet" href="contactstyles.css?version=51">
 </head>
 <script src="app.js"></script>
 <body style="font-family: 'Roboto', sans-serif;">

@@ -58,7 +58,7 @@ if(isset($_SESSION['userid'])) {
 	    <div class="create-acc">
 		    <a href="../login/login.html">Already have an account? Click here to login</a>
 	    </div>
-	    <input class="sbutton" type="submit" value="Submit">
+	    <input class="sbutton" type="submit" value="Create">
 	    </input>
 	  </form>
 	</div>

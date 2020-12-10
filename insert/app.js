@@ -55,9 +55,6 @@ function sendToInsertPHP(info, x){
 					success:function(msg){
 						alert(`${msg.student}`);
 						resetForm();
-						console.log(msg.student);
-						console.log(msg.faculty);
-						console.log(msg.staff);
 					}
 				});
 				break;
@@ -71,9 +68,6 @@ function sendToInsertPHP(info, x){
 			success:function(msg){
 				alert(`${msg.faculty}`);
 				resetForm();
-				console.log(msg.student);
-				console.log(msg.faculty);
-				console.log(msg.staff);
 			}
 		});
 				break;
@@ -87,22 +81,17 @@ function sendToInsertPHP(info, x){
 			success:function(msg){
 				alert(`${msg.staff}`);
 				resetForm();
-				console.log(msg.student);
-				console.log(msg.faculty);
-				console.log(msg.staff);
 			}
 		});
 				break;
 
 		}
-	console.log(info, x, data);
 }
 
 /* Not functional right now, still in development */
 /* There is a much easier way of doing this but just needed to test to see if a POST would work in the first place */
 
 function submit() {
-	console.log("clicked");
 	$(document).ready(() => {
 	let x = $("select")[0].value;
 		if (x == "student") {

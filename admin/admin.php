@@ -115,6 +115,10 @@ if(isset($_SESSION['userid'])) {
 	<div class="delete" style="margin:auto; margin-top: 30px;">
 		<h2 style="text-align: center; margin: auto;">Delete a SU member from the Database</h2>
 		<input style="width: 10%; margin-top: 10px; border: 2px solid #A80000; border-radius: 5px; padding: 10px;" type="text"  class="center" id="search_text2" placeholder="Enter ID" class="form-control" />
+	<hr style="width: 25%"/>
+	<div style="text-align:center;">
+		<button type="submit" class="btn btn-primary" onclick="submitDelete()" style="margin: auto; background-color: #A80000; color: #FFCC44; border: 2px solid white; !important;">Submit</button>
+	</div>
 	</div>
 	<div class="result"></div>
 </body>

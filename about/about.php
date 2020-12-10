@@ -14,7 +14,7 @@
 <link rel="icon"
       type="image/png"
       href="../assets/favicon.ico">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?version=51">
 </head>
 
 <body style="font-family: 'Roboto', sans-serif;">
@@ -37,8 +37,6 @@ if(isset($_SESSION['userid'])) {
 <?php	} else { ?>
 	<div class="topnav">
 	  <a href="../homepage/homepage.php">Home</a>
-	  <a href="../insert/insertpage.php">Insert</a>
-	  <a href="../search/search.php">Search</a>
           <a href="../stats/stats.php">Stats</a>
 	  <a class="active" href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">

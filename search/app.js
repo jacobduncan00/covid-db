@@ -1,6 +1,5 @@
  function load_data(query, x)
  {
-	 console.log(query, x);
 	  $.ajax({
 	   url:"fetch.php",
 	   method:"POST",
@@ -25,4 +24,8 @@ function filter() {
 		   load_data("");
 		  }
 		 });
+}
+
+function redirect() {
+	window.location.href="../admin/admin.php";
 }

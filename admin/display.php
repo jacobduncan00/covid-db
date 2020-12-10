@@ -58,7 +58,7 @@ if (mysqli_num_rows($result) > 0) {
 
 	<hr style="width: 100%"/>
 	<div class="boxContainer" style="margin:auto;">
-	    <div class="box1" style="margin:auto;">
+	    <div class="box1" style="text-align:center;">
 		<button type="submit" class="btn btn-primary" onclick="submit()" style="margin: auto; background-color: #A80000; color: #FFCC44; border: 2px solid white; !important;">Submit</button>
 	    </div>
 	</div>
@@ -79,4 +79,5 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 echo $output;
+mysqli_close($connect);
 ?>

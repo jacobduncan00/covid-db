@@ -39,8 +39,6 @@ if(isset($_SESSION['userid'])) {
 <?php	} else { ?>
 	<div class="topnav">
 	  <a href="../homepage/homepage.php">Home</a>
-	  <a href="../insert/insertpage.php">Insert</a>
-	  <a href="../search/search.php">Search</a>
 	  <a class="active" href="../stats/stats.php">Stats</a>
 	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">

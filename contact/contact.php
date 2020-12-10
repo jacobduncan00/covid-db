@@ -16,7 +16,7 @@ session_start();
       href="../assets/favicon.ico">
   <link rel="stylesheet" href="contactstyles.css">
 </head>
-
+<script src="app.js"></script>
 <body style="font-family: 'Roboto', sans-serif;">
 <?php
 if(isset($_SESSION['userid'])) {
@@ -36,8 +36,6 @@ if(isset($_SESSION['userid'])) {
 <?php	} else { ?>
 	<div class="topnav">
 	  <a href="../homepage/homepage.php">Home</a>
-	  <a href="../insert/insertpage.php">Insert</a>
-	  <a href="../search/search.php">Search</a>
           <a href="../stats/stats.php">Stats</a>
 	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
@@ -63,13 +61,13 @@ if(isset($_SESSION['userid'])) {
 			<div class="col-md-6 col-sm-12">
 				<div class="styled-input">
 					<input type="text" required />
-					<label>Email</label>
+					<label>SU Email</label>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
 				<div class="styled-input" style="float:right;">
 					<input type="text" required />
-					<label>Phone Number</label>
+					<label>SU ID</label>
 				</div>
 			</div>
 			<div class="col-xs-12">
@@ -79,7 +77,7 @@ if(isset($_SESSION['userid'])) {
 				</div>
 			</div>
 			<div class="col-xs-12">
-				<div class="btn-lrg submit-btn" style="margin-bottom: 50px;">Send Message</div>
+				<div class="btn-lrg submit-btn" onclick="dummySubmit()" style="margin-bottom: 50px;">Send Message</div>
 			</div>
 		</div>
 </div>

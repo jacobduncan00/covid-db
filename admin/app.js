@@ -18,6 +18,18 @@ function load_data(query, x) {
 	});
 }
 
+function load_data2(query) {
+	$.ajax({
+		url: "delete.php",
+		method: "POST",
+		data: {number: query},
+		success:function(data) {
+			alert(data);
+			$('#search_text2').val('');
+		}
+	});
+}
+
 function filter() {
 	$(document).ready(() => {
 		$('#search_text').val('');
@@ -85,14 +97,12 @@ function resetForm() {
 
 function sendToInsertPHP(info) {
 	data = {id: info[0], name: info[1], email: info[2], birthdate: info[3], resultDate: info[4], result: info[5]};
-	console.log(data);
 	$.ajax({
 		url: "toDB.php",
 		method: "POST",
 		dataType: "json",
 		data: data,
 		success:function(msg) {
-			console.log(msg.returnMessage);
 			alert(`${msg.returnMessage}`);
 			resetForm();
 		}
@@ -102,6 +112,11 @@ function sendToInsertPHP(info) {
 function submit() {
 	let info = getUniversalData();
 	JSON.stringify(info);
-	console.log(info);
 	sendToInsertPHP(info);
+}
+
+function submitDelete() {
+ 	let input = document.getElementById('search_text2');
+	let inputVal = input.value;
+	load_data2(inputVal);
 }

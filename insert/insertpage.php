@@ -44,8 +44,6 @@ if(isset($_SESSION['userid'])) {
 <?php	} else { ?>
 	<div class="topnav">
 	  <a href="../homepage/homepage.php">Home</a>
-	  <a class="active" href="../insert/insertpage.php">Insert</a>
-	  <a href="../search/search.php">Search</a>
           <a href="../stats/stats.php">Stats</a>
 	  <a href="../about/about.php">FAQ</a>
 	  <div style="float:right;" class="topnav-right">
@@ -112,7 +110,7 @@ if(isset($_SESSION['userid'])) {
       <input type="text" class="form-control" id="grade" placeholder="1=Freshman  2=Sophomore   3=Junior   4=Senior">
     </div>
     <div class="form-group col-md-3 staff-show">
-      <label for="building">Building</label>
+      <label for="building">Building of work</label>
       <input type="text" class="form-control" id="building" placeholder="Henson">
     </div>
     <div class="form-group col-md-3 faculty-show">

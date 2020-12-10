@@ -99,7 +99,7 @@ while($row=mysqli_fetch_array($result)) {
 			<p><span style="font-size: 22px;">Test Date:</span> ' . $testDate["month"] . '/' . $testDate["day"] . '/' . $testDate["year"] . '</td>
 			<br></br>
 			<div style="text-align: center;">
-			<button style="font-size: 22px; background-color: orange; border: 2px solid black; border-radius: 5px; padding: 5px; margin-bottom: 10px; width: 30%;">Edit</button>
+			<button onclick="redirect()" style="font-size: 22px; background-color: orange; border: 2px solid black; border-radius: 5px; padding: 5px; margin-bottom: 10px; width: 30%;">Edit</button>
 			</div>
 			</div>
 			</div>
@@ -139,7 +139,7 @@ while($row=mysqli_fetch_array($result)) {
 			<p><span style="font-size: 22px;">Test Date:</span> ' . $testDate["month"] . '/' . $testDate["day"] . '/' . $testDate["year"] . '</td>
 			<br></br>
 			<div style="text-align: center;">
-			<button style="font-size: 22px; background-color: orange; border: 2px solid black; border-radius: 5px; padding: 5px; margin-bottom: 10px; width: 30%;">Edit</button>
+			<button onclick="redirect()" style="font-size: 22px; background-color: orange; border: 2px solid black; border-radius: 5px; padding: 5px; margin-bottom: 10px; width: 30%;">Edit</button>
 			</div>
 			</div>
 			</div>
@@ -167,7 +167,7 @@ while($row=mysqli_fetch_array($result)) {
 }
 $output .= "</div>";
 echo $output; 
-
+mysqli_close($connect);
 }
 
 ?>

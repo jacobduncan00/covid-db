@@ -1,5 +1,4 @@
-# Salisbury University COVID-19 Database Interface - COSC 386 Semester Project
-## Jacob Duncan
+# Salisbury University COVID-19 Database Interface - COSC 386 Semester Project by Jacob Duncan
 
 # Features
 
